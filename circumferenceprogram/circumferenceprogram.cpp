@@ -9,8 +9,179 @@ void compute(double annualsalary, double percentup, double& raise, double& newan
 
 int main()
 {
+	system("cls");
+	system("color 75");
+	// pn: product number, up: units produced, bp: bonus pay, opr: over pay rate, uq: units over quota
+	string name, pn;
+	int quota, up, uq;
+	double bp, opr, total_pay, base_pay;
 
-	// problem n5
+	int count = 0;
+
+	while (count<2)
+	{
+
+		cout << "Enter  name: ";
+		cin >> name;
+
+		cout << "Enter product number: ";
+		cin >> pn;
+
+		cout << "Enter quota: ";
+		cin >> quota;
+
+		cout << "Enter units produced: ";
+		cin >> up;
+
+
+		uq = up - quota;
+
+		if ((uq >= 1) and (uq <= 11)) {
+			opr = 0.60;
+		}
+		else if ((uq >= 11) and (uq <= 25)) {
+			opr = 0.65;
+		}
+		else if ((uq >= 26) and (uq <= 45)) {
+			opr = 0.70;
+		}
+		else if (uq >= 46) {
+			opr = 0.75;
+		}
+		else {
+			opr = 0;
+		}
+
+
+		bp = uq * opr;
+
+		base_pay = 0.60 * quota;
+
+		total_pay = base_pay + bp;
+
+		cout << setw(15) << "Employee "
+		<< setw(15) << "Product No."
+		<< setw(15) << "Quota Number"
+		<< setw(15) << "Units Produced"
+		<< setw(15) << "Over quota"
+		<< setw(15) << "Bonus Pay"
+		<< setw(15) << "Total Pay"
+		<< endl;
+
+		cout << setw(15) << name
+			<< setw(15) << pn
+			<< setw(15) << quota
+			<< setw(15) << up
+			<< setw(15) << opr
+			<< setw(15) << bp
+			<< setw(15) << total_pay
+			<< endl;
+
+
+
+	}
+
+C:\Users\Sam\source\repos\cpp_programs\circumferenceprogram\circumferenceprogram.cpp
+
+	return 0;
+
+
+
+
+
+
+	/*
+	// ******************************************* problem n1 *********************************************
+	string lastname;
+	double previous_balance, payments, charges;
+	double new_balance, finance_charge, month_end_balance;
+
+	cout << "Enter last name: ";
+	cin >> lastname;
+
+	cout << "Enter previous balance: ";
+	cin >> previous_balance;
+
+	cout << "Enter payments: ";
+	cin >> payments;
+
+	cout << "Enter charges: ";
+	cin >> charges;
+
+
+	new_balance = previous_balance - payments + charges;
+	finance_charge = new_balance * 0.12;
+	month_end_balance = new_balance + finance_charge;
+
+	cout << "New Balance is " << new_balance << endl;
+	cout << "Finance charge is " << finance_charge << endl;
+	cout << "Month end balance is " << month_end_balance << endl;
+	*/
+
+	/*
+	// ******************************************* problem n2 *********************************************
+	string name;
+	double total_sales, cost_of_sales, net_profit;
+	int count = 0;
+
+	count = 0;
+
+	while (count < 2)
+	{
+
+		cout << "Enter your name: -";
+		cin >> name;
+
+		cout << "Enter your total sales: - ";
+		cin >> total_sales;
+
+		cout << "Enter your cost of sales: - ";
+		cin >> cost_of_sales;
+
+
+		net_profit = total_sales - cost_of_sales;
+
+		count = count + 1;
+
+		cout << "You net profit is:" << net_profit << endl;
+
+	}
+	*/
+	/*
+	// ******************************************* problem n3 *********************************************
+
+	system("cls");
+	system("color 75");
+	string employee_name;
+	// gp: gross_pay, fit: federal income tax , np: net pay
+	double rate, gp, fit, np;
+	int hours, count=0;
+
+
+	while (count < 2)
+	{
+		cout << "Enter name: ";
+		cin >> employee_name;
+
+		cout << "Enter hours: ";
+		cin >> hours;
+
+		cout << "Enter rate: ";
+		cin >> rate;
+
+		gp = hours * rate;
+		fit = gp * 0.15;
+		np = gp - fit;
+
+		count = count + 1;
+
+		cout << "The net pay is: " << np << endl;
+
+	}
+	*/
+
+	/*
+	// ******************************************* problem n5 *********************************************
 	system("cls");
 	system("color 75");
 	string employeename;
@@ -52,62 +223,10 @@ int main()
 		cout << "New annual salary is " << total_ann_slr << endl;
 
 	}
-
+	*/
 
 	
-	/*
-	string lastname;
-	double previous_balance, payments, charges;
-	double new_balance, finance_charge, month_end_balance;
-
-	cout << "Enter last name: ";
-	cin >> lastname;
-
-	cout << "Enter previous balance: ";
-	cin >> previous_balance;
-
-	cout << "Enter payments: ";
-	cin >> payments;
-
-	cout << "Enter charges: ";
-	cin >> charges;
-
-
-	new_balance = previous_balance - payments + charges;
-	finance_charge = new_balance * 0.12;
-	month_end_balance = new_balance + finance_charge;
-
-	cout << "New Balance is " << new_balance << endl;
-	cout << "Finance charge is " << finance_charge << endl;
-	cout << "Month end balance is " << month_end_balance << endl;
-	*/
-
-    /*
-
-	Sales Program 
-	cout << "Hello World!\n";
-	int count = 0;
-	string salesperson;
-	double totalsales, costofsales, netprofit;
-
-	while (count<2)
-	{
-		cout << "Enter the sales person name: ";
-		cin >> salesperson;
-
-		cout << "Enter the total of sales: ";
-		cin >> totalsales;
-
-		cout << "Enter the cost of sales: ";
-		cin >> costofsales;
-
-		netprofit = totalsales - costofsales;
-
-		count = count + 1;
-
-		cout << "The net profit is " << netprofit << endl;
-	}
-	*/
+	
 
 	return 0;
 }
